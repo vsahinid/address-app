@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from '../address';
 
 @Component({
   selector: 'app-address',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddressComponent implements OnInit {
 
-  constructor() { }
+  formData = new Address();
+
+  constructor(private addressService: AddressService) { }
 
   ngOnInit(): void {
+  }
+
+  saveData(){
+    this.addressService.saveAddress(this.formData)
   }
 
 }

@@ -1,7 +1,13 @@
 <div>
   <form>
+    {{ name }}
     <div class="formLine">
-      <input type="text" name="firstname" placeholder="First name" />
+      <input
+        type="text"
+        name="firstname"
+        placeholder="First name"
+        value="{{ name }}"
+      />
     </div>
     <div class="formLine">
       <input type="text" name="lastname" placeholder="Last name" />

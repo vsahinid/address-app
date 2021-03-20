@@ -10,6 +10,10 @@ import { HomeComponent } from './home/home.component';
 import { AddressComponent } from './address/address.component';
 import { AboutComponent } from './about/about.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabase, AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,9 +26,12 @@ import { AboutComponent } from './about/about.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabase
   ],
-  providers: [],
+  providers: [AddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
